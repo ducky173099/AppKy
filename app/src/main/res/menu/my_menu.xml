@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/homepage"/>
+    <item
+        android:id="@+id/calendar"
+        android:title="Khám phá"
+        android:icon="@drawable/disk2"/>
+    <item
+        android:id="@+id/placeholder"
+        android:title="MV"
+        android:icon="@drawable/youtube"/>
+    <item
+        android:id="@+id/clock"
+        android:title="Cá nhân"
+        android:icon="@drawable/diskme"/>
+</menu>

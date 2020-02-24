@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splashbackground</item>
+    </style>
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">#ffffff</item>
+    </style>
+    <style name="ToolbarFragment" parent="AppTheme">
+        <item name="actionMenuTextColor">@color/camsang</item>
+        <item name="android:actionMenuTextColor">@color/camsang</item>
+    </style>
+    <style name="backgroundFloatingbutton" parent="AppTheme">
+        <item name="actionMenuTextColor">@color/bgbotnav</item>
+        <item name="android:actionMenuTextColor">@color/bgbotnav</item>
+    </style>
+
+
+    <style name="NavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/ActiveText</item>
+        <item name="itemTextAppearanceInactive">@style/InactiveText</item>
+    </style>
+    <style name="ActiveText">
+        <item name="android:textColor">@color/camsang</item>
+    </style>
+    <style name="InactiveText">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+</resources>

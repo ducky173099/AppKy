@@ -11,12 +11,17 @@ import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.animation.TranslateAnimation;
+import android.widget.FrameLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -28,18 +33,22 @@ import com.example.app_ky.fragment.HomeFragment;
 import com.example.app_ky.fragment.PlaceholderFragment;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
-    BottomAppBar bottomAppBar;
+    BottomAppBar bottom_appbar;
     BottomNavigationView bottomNavigationView;
     FloatingActionButton floatingActionButton;
     Fragment selectedFragment = null;
     public static Toolbar toolbar;
-    boolean isCheck = true;
+    boolean isCheck = true, isShow = true;
 
     ScrollView scrollView;
+
+
+    int pos;
 
 
     @Override
@@ -48,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initView();
-        setScroll();
+//        setScroll();
         setMenuToolbar();
 
 
@@ -60,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new HomeFragment()).commit();
 
-        bottomAppBar = findViewById(R.id.bottom_appbar);
 //        bottomAppBar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
 //
 //        bottomAppBar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -84,31 +92,94 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
 
     private void initView() {
         toolbar = findViewById(R.id.toolbar);
+        bottom_appbar = findViewById(R.id.bottom_appbar);
         scrollView = findViewById(R.id.scrollView);
         bottomNavigationView = findViewById(R.id.bottomNavigation);
-
 
     }
 
     private void setScroll() {
-//        scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+//        scrollView.postDelayed(new Runnable() {
 //            @Override
-//            public void onScrollChanged() {
-//                if (scrollView != null) {
-//                    if (scrollView.getChildAt(0).getBottom() <= (scrollView.getHeight() + scrollView.getScrollY())) {
-//                        bottomNavigationView.setVisibility(View.VISIBLE);
-//                    }
-//                    else {
-//                        bottomNavigationView.setVisibility(View.INVISIBLE);
-//                    }
-//                }
+//            public void run() {
+//                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+//                Toast.makeText(MainActivity.this, "scrolllllllllll", Toast.LENGTH_SHORT).show();
 //            }
-//        });
+//        },1000);
 
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+                @Override
+                public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+
+
+
+                    Log.e("scroll", "onScrollChange: " + scrollY);
+
+                    if (scrollY > 230 ) {
+                        if (isShow){
+                            TranslateAnimation animate1 = new TranslateAnimation(0,0,0,bottom_appbar.getHeight());
+                            TranslateAnimation animate2 = new TranslateAnimation(0,0,0,bottomNavigationView.getHeight());
+                            animate1.setDuration(500);
+                            animate2.setDuration(500);
+                            bottom_appbar.setVisibility(View.GONE);
+                            bottomNavigationView.setVisibility(View.GONE);
+                            bottomNavigationView.startAnimation(animate2);
+                            bottom_appbar.startAnimation(animate1);
+                            isShow = false;
+                        }
+
+//                        Toast.makeText(MainActivity.this, "downnnn", Toast.LENGTH_SHORT).show();
+                        Log.i("scroll", "Scroll DOWN");
+                    }
+                    if (scrollY < oldScrollY) {
+                        if (!isShow){
+//                            TranslateAnimation animate1 = new TranslateAnimation(0,0,0,bottom_appbar.getHeight());
+//                            TranslateAnimation animate2 = new TranslateAnimation(0,0,0,bottomNavigationView.getHeight());
+//                            animate1.setDuration(500);
+//                            animate2.setDuration(500);
+                            bottom_appbar.setVisibility(View.VISIBLE);
+                            bottomNavigationView.setVisibility(View.VISIBLE);
+//                            bottom_appbar.startAnimation(animate1);
+//                            bottomNavigationView.startAnimation(animate2);
+//                            isShow = true;
+                        }
+
+
+
+                        Toast.makeText(MainActivity.this, "uppp", Toast.LENGTH_SHORT).show();
+                        Log.i("scroll", "Scroll UP");
+                    }
+
+//                    if (scrollY == 0) {
+//                        bottom_appbar.setVisibility(View.VISIBLE);
+//                        bottomNavigationView.setVisibility(View.VISIBLE);
+//
+////                        Toast.makeText(MainActivity.this, "TOP SCROLL", Toast.LENGTH_SHORT).show();
+//                        Log.i("scroll", "TOP SCROLL");
+//                    }
+
+//                    if (scrollY == ( v.getMeasuredHeight() - v.getChildAt(0).getMeasuredHeight() )) {
+//                        Log.i("scroll", "BOTTOM SCROLL");
+//                    }
+
+                }
+            });
+        }
+
+//        scrollView.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        },2000);
     }
 
     private void setMenuToolbar() {

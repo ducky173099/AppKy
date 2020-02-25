@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">App_Ky</string>
     <string name="chart">Charts: New &amp; hot</string>
+    <string name="mvhot">MV HOT</string>
     <string name="cat_bottomappbar_navigation_button_content_description">Show navigation drawer</string>
 
 </resources>

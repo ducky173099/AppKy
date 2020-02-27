@@ -106,12 +106,12 @@ public class HomeFragment extends Fragment implements ItemClick {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         recycler_mv.setLayoutManager(gridLayoutManager);
 
-        mvDatas.add(new MVData(R.drawable.obse));
-        mvDatas.add(new MVData(R.drawable.ecnhq));
-        mvDatas.add(new MVData(R.drawable.solo));
-        mvDatas.add(new MVData(R.drawable.lxlc));
-        mvDatas.add(new MVData(R.drawable.cnkc));
-        mvDatas.add(new MVData(R.drawable.ctcnta));
+        mvDatas.add(new MVData(R.drawable.obse,"EXO",getResources().getString(R.string.contentMV) + ""));
+        mvDatas.add(new MVData(R.drawable.ecnhq,"Sơn Tùng M-TP",getResources().getString(R.string.contentMV)  + ""));
+        mvDatas.add(new MVData(R.drawable.solo,"Black Pink",getResources().getString(R.string.contentMV)  +""));
+        mvDatas.add(new MVData(R.drawable.lxlc,"Lê Bảo Bình",getResources().getString(R.string.contentMV)  + ""));
+        mvDatas.add(new MVData(R.drawable.cnkc,"Hiền Hồ",getResources().getString(R.string.contentMV)  + ""));
+        mvDatas.add(new MVData(R.drawable.ctcnta,"Erick", getResources().getString(R.string.contentMV) + ""));
 
         mvAdapter = new MVAdapter(getContext(), mvDatas, this);
         recycler_mv.setAdapter(mvAdapter);
@@ -182,21 +182,49 @@ public class HomeFragment extends Fragment implements ItemClick {
                 uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.chuyennhuchuabatdau);
                 intent = new Intent(getContext(), MVActivity.class);
                 intent.putExtra("uri", uri+"");
+                intent.putExtra("name", mvDatas.get(position).getName());
+                intent.putExtra("content",mvDatas.get(position).getContent());
                 startActivity(intent);
                 break;
             case 1:
-                uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.ecnhq);
+                uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.ecnhq2);
                 intent = new Intent(getContext(), MVActivity.class);
                 intent.putExtra("uri", uri+"");
+                intent.putExtra("name", mvDatas.get(position).getName());
+                intent.putExtra("content",mvDatas.get(position).getContent());
                 startActivity(intent);
                 break;
             case 2:
-                Toast.makeText(mainActivity, "hahaaa" + position, Toast.LENGTH_SHORT).show();
-
+                uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.obse);
+                intent = new Intent(getContext(), MVActivity.class);
+                intent.putExtra("uri", uri+"");
+                intent.putExtra("name", mvDatas.get(position).getName());
+                intent.putExtra("content",mvDatas.get(position).getContent());
+                startActivity(intent);
                 break;
             case 3:
-                Toast.makeText(mainActivity, "hahaaa" + position, Toast.LENGTH_SHORT).show();
-
+                uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.lxlc);
+                intent = new Intent(getContext(), MVActivity.class);
+                intent.putExtra("uri", uri+"");
+                intent.putExtra("name", mvDatas.get(position).getName());
+                intent.putExtra("content",mvDatas.get(position).getContent());
+                startActivity(intent);
+                break;
+            case 4:
+                uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.cnkc);
+                intent = new Intent(getContext(), MVActivity.class);
+                intent.putExtra("uri", uri+"");
+                intent.putExtra("name", mvDatas.get(position).getName());
+                intent.putExtra("content",mvDatas.get(position).getContent());
+                startActivity(intent);
+                break;
+            case 5:
+                uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.ctcnta);
+                intent = new Intent(getContext(), MVActivity.class);
+                intent.putExtra("uri", uri+"");
+                intent.putExtra("name", mvDatas.get(position).getName());
+                intent.putExtra("content",mvDatas.get(position).getContent());
+                startActivity(intent);
                 break;
         }
     }

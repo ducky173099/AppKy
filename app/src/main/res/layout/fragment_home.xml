@@ -74,7 +74,7 @@
             android:paddingHorizontal="15dp"
             android:paddingVertical="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/recycler_catgory"/>
         <LinearLayout
             android:layout_marginTop="15dp"
@@ -93,6 +93,7 @@
                 android:textSize="30sp"
                 android:textColor="@color/camsang"/>
             <ImageView
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"

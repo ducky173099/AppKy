@@ -33,4 +33,7 @@
     <style name="InactiveText">
         <item name="android:textColor">@color/colorWhite</item>
     </style>
+    <style name="toolbarColor" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+    </style>
 </resources>

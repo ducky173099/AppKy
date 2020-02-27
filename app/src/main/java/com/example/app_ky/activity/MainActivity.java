@@ -63,11 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 //        bottomNavigationView.setItemTextColor(ColorStateList.valueOf(getResources().getColor(R.color.camsang)));
-
-        bottomNavigationView.setItemIconTintList(null);
+        bottomNavigationView.setSelected(false);
+//        bottomNavigationView.setItemIconTintList(null);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new HomeFragment()).commit();
+
 
 //        bottomAppBar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
 //
@@ -238,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     selectedFragment).commit();
 
-            return false;
+            return true;
         }
     };
 

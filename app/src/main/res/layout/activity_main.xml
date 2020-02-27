@@ -30,6 +30,7 @@
                     app:popupTheme="@style/ToolbarFragment"
                     android:background="@drawable/gradient1"/>
                 <ScrollView
+
                     android:id="@+id/scrollView"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     android:layout_below="@id/toolbar"
@@ -57,12 +58,13 @@
                 app:layout_anchorGravity="center" />
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 app:menu="@menu/my_menu"
-                app:itemIconTint="@drawable/check_item_color_botnav"
+               app:itemIconTint="@drawable/check_item_color_botnav"
                 app:itemTextColor="@drawable/check_item_color_botnav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:id="@+id/bottomNavigation"
+                app:itemHorizontalTranslationEnabled="false"
                 app:labelVisibilityMode="labeled" />
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:backgroundTint="@color/bgbotnav"

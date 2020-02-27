@@ -1,11 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:background="#DA683A"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#000"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="svsdvsdvsd"
-        android:textSize="50sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/search"/>
+            </RelativeLayout>
+            <EditText
+                android:id="@+id/edtsearch_chuanbi"
+                android:layout_gravity="center"
+                android:hint="Tìm kiếm bài hát"
+                android:textColor="#7c7c7c"
+                android:textColorHint="#7c7c7c"
+                android:textSize="13sp"
+                android:background="@color/tranparent"
+                android:layout_weight="8"
+                android:layout_width="0dp"
+                android:layout_height="20dp"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/delchuanbi"
+                    android:layout_centerInParent="true"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/cancel"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:background="@drawable/bg_chill"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_music"/>
+    </LinearLayout>
 </LinearLayout>

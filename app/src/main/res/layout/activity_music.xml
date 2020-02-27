@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="45dp"
+    android:background="#000"
+    android:orientation="vertical"
+    tools:context=".activity.MusicActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar_music"
+        app:title="@string/chart"
+        app:titleTextColor="@color/camhoisang"/>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"
+        android:background="@color/colorWhite"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:id="@+id/imageViewDisc"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:srcCompat="@drawable/usuk" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txt_music_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ten bai hat"
+            android:textSize="17sp"
+            android:textColor="@color/camsang"/>
+        <TextView
+            android:id="@+id/txt_single_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ten ca sy"
+            android:textSize="15sp"
+            android:textColor="@color/trangopacity"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linear_media"
+            android:layout_marginBottom="1dp"
+            android:paddingHorizontal="80dp"
+            android:paddingVertical="10dp">
+            <TextView
+                android:id="@+id/txt_lyric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:text="thương"
+                android:textColor="@color/colorWhite" />
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/linear_media"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:paddingHorizontal="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textviewTimeSong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textColor="#fff"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/textviewTimeTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textColor="#fff"
+                    android:textSize="20sp"/>
+            </RelativeLayout>
+            <SeekBar
+                android:layout_marginHorizontal="15dp"
+                android:id="@+id/seekbarSong"
+                android:progressBackgroundTint="#FFFFFF"
+                android:progressTint="@color/camsang"
+                android:thumbTint="@color/camsang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            </SeekBar>
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/buttonPrev"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_skip_back"/>
+                <RelativeLayout
+                    android:layout_marginHorizontal="55dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/buttonPlay"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_play"/>
+
+                    <ImageButton
+                        android:visibility="gone"
+                        android:id="@+id/buttonStop"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_pause"/>
+                </RelativeLayout>
+
+
+                <ImageButton
+                    android:id="@+id/buttonNext"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_skip_forward"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

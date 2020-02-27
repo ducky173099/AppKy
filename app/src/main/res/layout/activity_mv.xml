@@ -8,9 +8,9 @@
     android:layout_height="match_parent"
     tools:context=".activity.MVActivity">
     <androidx.appcompat.widget.Toolbar
+        app:title="EXO"
         app:titleTextColor="#efb479"
-        android:theme="@style/ToolbarFragment"
-        app:popupTheme="@style/ToolbarFragment"
+        app:theme="@style/ToolbarFragment"
         android:id="@+id/toolbar_mv"
         android:background="@drawable/gradient1"
         android:layout_width="match_parent"
@@ -19,4 +19,12 @@
         android:id="@+id/videoViewMp4"
         android:layout_width="match_parent"
         android:layout_height="230dp" />
+    <TextView
+        android:text="@string/mvhot"
+        android:textColor="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_content_mv"
+        android:paddingTop="15dp"
+        android:paddingHorizontal="15dp"/>
 </LinearLayout>

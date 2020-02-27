@@ -18,9 +18,13 @@ public class MVData {
 //    }
 
     int Hinh;
+    String name;
+    String content;
 
-    public MVData(int hinh) {
+    public MVData(int hinh, String name, String content) {
         Hinh = hinh;
+        this.name = name;
+        this.content = content;
     }
 
     public int getHinh() {
@@ -29,5 +33,21 @@ public class MVData {
 
     public void setHinh(int hinh) {
         Hinh = hinh;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

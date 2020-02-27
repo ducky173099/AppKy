@@ -18,5 +18,9 @@
     <color name="bgbotnav">#1a1b1d</color>
     <color name="camsang">#efb479</color>
     <color name="camtoi">#2f2a26</color>
+    <color name="camhoisang">#846342</color>
     <color name="camsound">#f50</color>
+    <color name="tranparent">#00FFFDFD</color>
+    <color name="trangopacity">#5CFFFFFF</color>
+
 </resources>

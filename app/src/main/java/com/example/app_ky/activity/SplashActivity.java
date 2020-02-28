@@ -12,7 +12,7 @@ import com.example.app_ky.R;
 
 public class SplashActivity extends AppCompatActivity {
     ProgressBar splashProgress;
-    int SPLASH_TIME = 2000; //This is 5 seconds
+    int SPLASH_TIME = 5000; //This is 5 seconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

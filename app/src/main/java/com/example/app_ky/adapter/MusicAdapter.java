@@ -21,6 +21,11 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder>{
     ArrayList<MusicData> musicData;
     ItemClick itemClick;
 
+    public void setMusicData(ArrayList<MusicData> musicData) {
+        this.musicData = musicData;
+        notifyDataSetChanged();
+    }
+
     public MusicAdapter(Context context, ArrayList<MusicData> musicData, ItemClick itemClick) {
         this.context = context;
         this.musicData = musicData;

@@ -19,7 +19,7 @@
         android:layout_height="0.5dp"
         android:background="@color/colorWhite"/>
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:id="@+id/imageViewDisc"
         android:layout_width="250dp"
@@ -33,6 +33,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="30dp"
+            android:background="@drawable/border_name_music"
             android:id="@+id/txt_music_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

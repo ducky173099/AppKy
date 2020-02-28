@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:background="#000"
+    android:paddingBottom="?attr/actionBarSize"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +30,7 @@
                     android:src="@drawable/search"/>
             </RelativeLayout>
             <EditText
-                android:id="@+id/edtsearch_chuanbi"
+                android:id="@+id/edtsearch_music"
                 android:layout_gravity="center"
                 android:hint="Tìm kiếm bài hát"
                 android:textColor="#7c7c7c"
@@ -44,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
                 <ImageView
-                    android:id="@+id/delchuanbi"
+                    android:id="@+id/del_music"
                     android:layout_centerInParent="true"
                     android:layout_width="15dp"
                     android:layout_height="15dp"

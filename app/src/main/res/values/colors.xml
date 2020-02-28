@@ -22,5 +22,6 @@
     <color name="camsound">#f50</color>
     <color name="tranparent">#00FFFDFD</color>
     <color name="trangopacity">#5CFFFFFF</color>
+    <color name="denbth">#1a1b1d</color>
 
 </resources>

@@ -185,7 +185,10 @@ public class HomeFragment extends Fragment implements ItemClick {
                 intent.putExtra("name", mvDatas.get(position).getName());
                 intent.putExtra("content",mvDatas.get(position).getContent());
                 startActivity(intent);
+                Log.e("pkname", "onClick: " + uri);
+
                 break;
+
             case 1:
                 uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.ecnhq2);
                 intent = new Intent(getContext(), MVActivity.class);

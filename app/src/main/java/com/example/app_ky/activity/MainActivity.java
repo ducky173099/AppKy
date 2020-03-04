@@ -9,8 +9,10 @@ import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ScrollView;
 
 import com.example.app_ky.R;
@@ -33,9 +35,8 @@ public class MainActivity extends AppCompatActivity {
     boolean isCheck = true, isShow = true;
 
     ScrollView scrollView;
-
-
     int pos;
+
 
 
     @Override
